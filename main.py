@@ -7,7 +7,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     async with async_playwright() as p:
-        browser = await p.chromium.connect_over_cdp(os.environ['BROWSER_ENDPOINT'])
+        browser = await p.chromium.connect_over_cdp(os.environ['BROWSER_PLAYWRIGHT_ENDPOINT'])
 
         context = await browser.new_context()
         page = await context.new_page()

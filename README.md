@@ -3,12 +3,12 @@
 Create a reference variable on your Railway service that you deploy your app to -
 
 ```shell
-BROWSER_ENDPOINT=${{Browserless.BROWSER_ENDPOINT}}
+BROWSER_PLAYWRIGHT_ENDPOINT=${{Browserless.BROWSER_PLAYWRIGHT_ENDPOINT}}
 ```
 
 </br>
 
-Then use `os.environ['BROWSER_ENDPOINT']` in code -
+Then use `os.environ['BROWSER_PLAYWRIGHT_ENDPOINT']` in code -
 
 ### Before
 
@@ -19,7 +19,7 @@ browser = await p.chromium.launch()
 ### After
 
 ```python
-browser = await p.chromium.connect_over_cdp(os.environ['BROWSER_ENDPOINT'])
+browser = await p.chromium.connect_over_cdp(os.environ['BROWSER_PLAYWRIGHT_ENDPOINT'])
 ```
 
 The rest of your code remains the same with no other changes required.
